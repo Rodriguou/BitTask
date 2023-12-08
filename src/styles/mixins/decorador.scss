@@ -1,0 +1,16 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+@mixin decorador($cor, $largura,$altura){
+    &::before{
+        content: "";
+        position: absolute;
+        top: 30px;
+        background-color: $cor;
+        height: $altura;
+        width: $largura;
+        z-index: -1;
+   }
+}

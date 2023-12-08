@@ -1,0 +1,39 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/botao.scss";
+@use "../mixins/tipografia.scss";
+@use "sass:math";
+
+.box-text-area{
+    display: flex;
+    flex-direction: column;
+    gap: math.div(1.6rem, 2) ;
+    width: 100%;
+    height: 50%;
+    label{
+        @include tipografia.corpo_texto(20px,#4E4E4E)
+
+    }
+    
+    .textarea-compo{
+        resize: none;
+        border:1px solid paleta_cores.$lilas ;
+        border-radius: 0.6rem;
+        padding: 1.2rem 2rem;
+        transition: 0.6s;
+        &:active{
+            box-shadow: 0px 4px 15px 0px #81a7ff7e;
+        }
+        &:focus{
+            box-shadow: 0px 4px 15px 0px #81a7ff7e;
+            
+        }
+    }
+    .textarea-compo[disabled]{
+        border:1px solid transparent ;
+        
+        
+    }
+}
+

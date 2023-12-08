@@ -1,0 +1,124 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+
+
+.body-drop-menu{
+    display: flex;
+    width: 15%;
+    justify-content: center;
+    
+    #box-drop-menu{
+        position: relative;
+        border-radius: 360%;
+        height: 0.8rem;
+        width: 0.8rem;
+        background-color: paleta_cores.$cor-principal;
+        border: 0;
+        padding: 0.5rem;
+        transition: 0.3s;
+       
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0px; 
+            right: 22px;
+            height: 3%;
+            width: 3%;
+            padding: 0.5rem;
+            border-radius: 360%;
+            background-color: paleta_cores.$cor-principal;
+            
+            
+        }
+        
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0px; 
+            left: 22px;
+            height: 3%;
+            width: 3%;
+            padding: 0.5rem;
+            border-radius: 360%;
+            background-color: paleta_cores.$cor-principal;
+            
+        }
+        
+        
+    }
+    .inner-drop{
+        position: absolute;
+        transition: 0.6s;
+        right: 75px;
+        top: 80px;
+        padding: 1rem;
+        border-radius: 0.9rem;
+        background-color: #F2F2F2;
+
+        .lista-drop-menu{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .botao-menu-drop{
+            p{
+                @include tipografia.corpo_texto(18px)
+            }
+            .caneta-editar{
+                img{
+                    width: 80%;
+                    
+                }
+                place-self: start;
+            }
+            .lixeira-apagar{
+                img{
+                    width: 80%;
+
+                }
+                place-self: start;
+                
+            }
+            
+            button#editar{
+                
+                display: grid;
+                grid-template-columns: 55% 1fr;
+                width: 100%;
+                align-items: center;
+                background-color: #fff;
+                border-radius: 0.9rem;
+                padding: 0.8rem 1.3rem;
+                border: 0px solid;
+                border: 2px solid transparent;
+                transition: 0.6s;
+              
+                
+            }
+            
+            button#excluir{
+                display: grid;
+                grid-template-columns: 55% 1fr;
+                width: 100%;
+                align-items: center;
+                color: #9A4A4D;
+                background-color: #FFA8A7;
+                border-radius: 0.9rem;
+                padding: 0.8rem 1.3rem;
+                border: 0px solid;
+                
+            }
+        }
+    }
+
+    .animacao-drop{
+        transform: translateY(-30px);
+        opacity: 0;
+        animation: animacaoLateral 0.4s ease-in-out forwards;
+        transition: 0.8s;
+    }
+}

@@ -1,0 +1,20 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+.box-card-desem{
+    display: flex;
+    align-items: center;
+    background-color: paleta_cores.$cinza-medio;
+    border-radius: 0.9rem;
+    h3{
+        @include tipografia.corpo_texto(25px,#fff)
+    }
+    .card-grafico-desem{
+        padding: 1.5rem;
+        width: 15%;
+        height: 65%;
+    }
+}

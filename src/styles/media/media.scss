@@ -1,0 +1,61 @@
+@media (min-width: 1500px){
+   h1{
+    font-size: 230%;
+   }
+   h2{
+    font-size: 200%;
+   }
+   h3{
+    font-size: 190%;
+   }
+   h4{
+    font-size: 170%;
+   }
+
+   p{
+    font-size: 150% !important;
+    line-height: normal !important;
+   }
+}
+
+@media (max-width: 950px){
+    // cadastro
+    .box-gif-cadastro {
+        display: none  !important;
+        img{
+            display: none;
+        }
+    }
+    
+    // login
+    .box-gif-login {
+        display: none  !important;
+        img{
+            display: none;
+        }
+    }
+
+
+    // tela inicial
+    .body-iniciar article.box-inicial{
+        display: block;
+    }
+    .navegacao-inicial .botao-log{
+        justify-self: center;
+    }
+    #deco-direita,#deco-esquerda{
+        display: none;
+    }
+
+    // home
+    @media (max-width: 900px){
+        #box-main-home .card-criar img{
+            display: none;
+        }
+    }
+
+    // tarefa
+
+
+    // projetos
+}

@@ -1,0 +1,15 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+.box-projeto{
+   
+    padding: to_rem.toRem(40px); 
+    main.main-projeto{
+        display: grid;
+        gap: 1rem;
+    }
+
+}

@@ -1,0 +1,41 @@
+
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+@use "sass:math";
+
+
+.box-check{
+    display: flex;
+    gap: math.div(1.6rem, 2) ;
+    #label-check{
+        @include tipografia.corpo_texto(25px);
+        display: grid;
+        grid-template-columns: 5% 1fr 5%;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+       
+    
+        
+        input{
+            width: to_rem.toRem(20px);
+            height: to_rem.toRem(20px);
+            transition: 0.3s;
+            &:hover{
+                background-color: #b3b3b3;
+            }
+        }
+    }
+
+}
+
+
+
+.completo{
+    text-decoration: line-through !important;
+    transition: 0.6s !important;
+    color: #b3b3b3 !important;
+}

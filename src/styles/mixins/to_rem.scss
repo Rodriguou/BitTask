@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function toRem ($tamanho){
+    @return math.div($tamanho, 16px) * 1rem
+}

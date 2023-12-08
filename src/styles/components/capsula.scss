@@ -1,0 +1,37 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+.box-capsula{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    border-radius: 1rem;
+   
+    padding: 1rem;
+    
+    .texto-capsula{
+        border-radius: 0.3rem;
+        p{
+            @include tipografia.corpo_texto(25px, paleta_cores.$cinza-escuro);
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+        }
+        background-color: #fff;
+        padding: 0.5rem;
+    }
+    
+    .numero-capsula{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: paleta_cores.$cor-principal;
+        border-radius: 0 0.3rem 0.3rem 0;
+        p{
+            @include tipografia.corpo_texto(25px, white);
+            padding: 0.5rem;
+
+        }
+    }
+}

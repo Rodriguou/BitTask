@@ -1,0 +1,23 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+section.box-desempenho{
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    gap: 1.6rem;
+    margin-top: 4rem;
+    background-color: paleta_cores.$cinza-escuro;
+    h3#titulo-desempenho{
+        @include tipografia.subtitulo(30px, #fff)
+    }
+    .inner-desempenho{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+        gap: 1rem;
+    }
+}

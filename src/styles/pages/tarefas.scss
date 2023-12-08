@@ -1,0 +1,34 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+
+
+.box-tarefa{
+    padding: to_rem.toRem(40px);
+    .geral-tarefa{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        gap: 1rem;
+    }
+    
+    .todas-tarefas{
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: 0.9rem;
+        background-color: paleta_cores.$cinza-escuro;
+        .titulo-select-tarefa{
+            h3{
+                @include tipografia.subtitulo(30px, #fff);
+
+            }
+            align-items: center;
+            display:flex;
+            justify-content: space-between;
+            gap: 1rem;
+            
+        }
+    }
+}

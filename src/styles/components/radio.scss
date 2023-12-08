@@ -1,0 +1,26 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/botao.scss";
+@use "../mixins/tipografia.scss";
+@use "sass:math";
+
+.labelRadio{
+    @include tipografia.corpo_texto(20px,#000000);
+    margin-bottom: math.div(1.6rem, 2);
+
+}
+.box-radio{
+    display: flex;
+    gap: math.div(1.6rem, 2) ;
+    .inner-radio{
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .item-radio{
+        display: flex;
+        flex-direction: column-reverse;
+        color: #919090;
+    }
+}

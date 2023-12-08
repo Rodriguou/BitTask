@@ -1,0 +1,62 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+@use "../mixins/decorador.scss";
+
+.box-login{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,2fr));
+    height: 100vh;
+    gap: 5rem;
+    .box-gif-login{
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        
+        img{
+            max-width: 100%;
+            max-height: 55%;
+            
+        }
+    }
+    .box-form-login{
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+        padding: 1rem;
+        height: 100vh;
+        background-color: paleta_cores.$branco-azulado;
+        
+        h2{
+            z-index: 2;
+            position: relative;
+            @include tipografia.titulo(55px);
+            @include decorador.decorador(paleta_cores.$lilas-deco, 
+            to_rem.toRem(115px),
+            to_rem.toRem(18px))
+        }
+    }
+    
+    .form-input-login{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        height: 100%;
+        animation: animacaoLateral 0.3s ease-in-out forwards;
+        transition: 0.6s;
+        transform:translateX(50px);
+        opacity: 0;
+        button{
+            place-self: end;
+            margin-top: 5rem;
+        }
+        aside.redirecionamento{
+            display: flex;
+            gap: 0.4rem;
+        }
+
+    }
+}

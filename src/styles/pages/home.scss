@@ -1,0 +1,52 @@
+@use "../mixins/tipografia.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/reset.scss";
+@use "../mixins/to_rem.scss";
+
+div.body-home{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+   header.box-header-secun{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: to_rem.toRem(25px) to_rem.toRem(42px);
+        align-items: center;
+        p {
+            
+            @include reset.reset();
+            @include tipografia.corpo_texto(25px);
+            justify-self: start;
+        }
+        #dia {
+            justify-self: end;
+        } 
+        #dia p{
+            @include reset.reset();
+            @include tipografia.corpo_texto(18px,#ffffff);
+            background-color: paleta_cores.$esmeralda;
+            border-radius: 0.9rem;
+            padding: 11px 21.071px 11px 17px;
+        }
+    }
+
+   
+}
+#box-main-home{
+    padding: to_rem.toRem(25px) to_rem.toRem(42px);
+    section.card-criar{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+        gap: 2.3rem;
+        div{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.4rem;
+        
+        }
+        button{
+            place-self: start end;
+        }
+        
+    }
+
+}

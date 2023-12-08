@@ -1,0 +1,52 @@
+
+// reset
+@use "../src/styles/mixins/reset.scss";
+
+// tipografia
+@use "../src/styles/mixins/tipografia.scss";
+
+// animacoes
+
+// paginas
+@use "../src/styles/pages/cadastrar.scss";
+@use "../src/styles/pages/login.scss";
+@use "../src/styles/pages/tela_inicial.scss";
+@use "../src/styles/pages/home.scss";
+@use "../src/styles/pages/tarefas.scss";
+@use "../src/styles/pages/projeto.scss";
+// componentes
+@use "../src/styles/components/input.scss";
+@use "../src/styles/components/check.scss";
+@use "../src/styles/components/textArea.scss";
+@use "../src/styles/components/select.scss";
+@use "../src/styles/components/botao.scss";
+@use "../src//styles/components/barraNavegacao.scss";
+@use "../src/styles/components/cardCriar.scss";
+@use "../src/styles/components/container.scss";
+@use "../src/styles/components/capsula.scss";
+@use '../src/styles/components/carrousel.scss';
+@use "../src/styles/components/seta.scss";
+@use "../src/styles/components/modal.scss";
+@use '../src/styles/components/radio.scss';
+@use "../src/styles/components/cardDesempe.scss";
+@use "../src/styles/components/desempenho.scss";
+@use "../src/styles/components/header.scss";
+@use "../src/styles/components/pesquisar.scss";
+@use "../src/styles/components/tag.scss";
+@use "../src/styles/components/cardProjeto.scss";
+@use "../src/styles/components/modalApresentar.scss";
+@use "../src/styles/components/botao-drop.scss";
+@use "../src/styles/components/cardTarefas.scss";
+@use "../src/styles/animation/animacao.scss";
+
+
+
+// media query
+@use "../src/styles/media/media.scss";
+body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    
+    
+}

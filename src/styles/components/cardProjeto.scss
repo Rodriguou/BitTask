@@ -1,0 +1,33 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+
+
+
+.box-card-projeto{
+    border-radius: 0.9rem;
+    .inner-card-projeto{
+        padding: 1rem;
+        #card-descricao-projeto{
+            @include tipografia.corpo_texto(18px, #a0a0a0)
+        }
+
+        .card-categoria-tarefa{
+            display: flex;
+            gap: 0.5rem;
+        }
+    }
+    .titulo-card-projeto{
+        display: grid;
+        grid-template-columns: 1fr 5%;
+        h3{
+            @include tipografia.subtitulo(30px)
+        }
+        
+    }
+    .card-categoria-tarefa{
+        display: flex;
+    }
+}

@@ -1,0 +1,22 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/tipografia.scss";
+
+header.body-header-compo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    padding: 1rem 0;
+    section.titulo-header{
+
+        h1#titulo-header{
+            @include tipografia.titulo(55px)
+        }
+    }
+    .secao-criar-pesquisar{
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+}

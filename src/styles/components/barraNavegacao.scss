@@ -1,0 +1,66 @@
+@use "../mixins/reset.scss";
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/botao.scss";
+
+
+nav.box-barra-nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: block;
+    height: 100%;
+    z-index: 99;
+   
+
+    
+    
+    ul.inner-barra-nav{
+        @include reset.reset();
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: to_rem.toRem(25px) to_rem.toRem(10px) to_rem.toRem(15px) to_rem.toRem(10px);
+        gap: 1.8rem;
+        height: 100%;
+        overflow: hidden;
+        width: 3.3rem;
+        transition: 0.4s;
+      
+        &:hover{
+            width: 9rem;
+            
+        }
+
+        a.item-nav{
+            @include reset.reset();
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0.5rem;
+            color: black;
+             
+        }
+       
+   
+    }
+    #selecionado{
+        transition: 0.6s;
+        border-radius: 0.9rem;
+        background-color: paleta_cores.$azul-claro;
+    }
+    .inner-barra-nav .item-nav img{
+        width: 30px;
+        height: 30px;
+        padding: to_rem.toRem(13px) to_rem.toRem(13px);
+        border-radius: 0.9rem;
+        transition: 0.3s;
+        &:hover{
+            background-color: paleta_cores.$azul-claro;
+
+        }
+    }
+    
+}
+
+

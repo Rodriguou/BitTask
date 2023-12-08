@@ -1,0 +1,36 @@
+@use "../variables/paleta_cores.scss";
+@use "../mixins/to_rem.scss";
+@use "../mixins/botao.scss";
+
+
+.botao-cadastro{
+    @include botao.botao("grande",
+    paleta_cores.$texto-azul-claro,
+    paleta_cores.$cor-principal,
+    8px solid transparent) ;
+    justify-self: center;
+   
+}
+
+.botao-login{
+    @include botao.botao("grande",
+    paleta_cores.$azul-escuro,
+    transparent,
+    8px solid paleta_cores.$azul-escuro );
+    justify-self: start;
+ 
+    
+ }
+
+ .botao-criar{
+    @include botao.botao("pequeno" ,white,paleta_cores.$azul-claro,0px);
+    border-radius: to_rem.toRem(10px);
+    transition: 0.3s
+    
+}
+
+.botao-enviar{
+    @include botao.botao("medio" ,black,paleta_cores.$azul-claro,3px solid transparent);
+    transition: 0.3s
+    
+ }
