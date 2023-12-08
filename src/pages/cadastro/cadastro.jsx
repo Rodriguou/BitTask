@@ -11,6 +11,7 @@ const Cadastro = () =>{
 	const nome = useForm(null);
 	const email = useForm('email');
 	const senha = useForm('senha');
+
     const [data, setData] = useState({
         nome : '',
         email : '',
@@ -27,7 +28,6 @@ const Cadastro = () =>{
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-
 			const url = `${base}/cadastro`; //Mudar a rota da API quando for hospedada 😒
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
