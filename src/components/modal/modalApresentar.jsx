@@ -9,14 +9,26 @@ import { ProjetoGlobal } from '../../context/projetoContext'
 import { BotaoEnviar } from '../button/botao'
 import RadioCompo from '../form/radio'
 import { ErroNotifi, SucessNotifi } from '../notificacao/notificacao'
+import { TarefaGlobal } from '../../context/tarefaContext'
 
 export const ModalApresentarP = ({aberto, fechado,dados,f}) => {
     const {EditarProj, DeletarProj} = useContext(ProjetoGlobal)
+    const {ObterTudoPorProjeto, AlterarTarefa} = useContext(TarefaGlobal)
     const [desabilitado, setDesabilitado] = React.useState(true)
-
+    const [tarefasDoProjeto, setTarefasDoProjeto] = React.useState()
     // variaveis de controle de notificações
     const [suceso, setSucesso] = React.useState(false)
     const [erro, setErro] = React.useState(false)
+    console.log(dados)
+
+    React.useEffect(() =>{
+        async function ObterTarefas(){
+            const req = await ObterTudoPorProjeto(dados.id)
+            setTarefasDoProjeto(req?.json)
+        }
+
+        ObterTarefas()
+    },[])
 
     // requisição 
     async function handleEditar(){
@@ -106,7 +118,8 @@ export const ModalApresentarP = ({aberto, fechado,dados,f}) => {
 
                 {desabilitado && 
                     <section >
-                        <CardTarefas disabled={desabilitado} dados={data} setDados={setData} titulo="Tarefas" fundo="#F6F6F6" />
+                        <CardTarefas disabled={desabilitado} dados={tarefasDoProjeto} setDados={setTarefasDoProjeto} titulo="Tarefas" fundo="#F6F6F6" />
+
                     </section>
                 }
                 {!desabilitado && <BotaoEnviar f={handleEditar} texto='FINALIZAR'/>}
