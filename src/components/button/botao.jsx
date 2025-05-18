@@ -11,9 +11,9 @@ export const BotaoCriar = ({setValue,value,cor,fundo}) =>{
     )
 }
 // botao de enviara para o servidor
-export const BotaoEnviar = ({f,texto = "CRIAR"} ) =>{
+export const BotaoEnviar = ({f,texto = "CRIAR", ...props} ) =>{
     return(
-        <button aria-label={texto} onClick={f} className="botao-enviar" >{texto}</button>
+        <button {...props} aria-label={texto} onClick={f} className="botao-enviar" >{texto}</button>
 
     )
 }
