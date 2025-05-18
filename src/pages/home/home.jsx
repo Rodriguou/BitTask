@@ -35,7 +35,7 @@ const Home = () => {
 
         <div>
             <header className='box-header-secun'>
-                <p>Bom dia, {nome} </p>
+                <p>Olá, {nome} </p>
                 <section aria-label='dia de hoje' id='dia'>
                     <p>{moment().format('DD-MM-YYYY')}</p>
             
@@ -46,7 +46,7 @@ const Home = () => {
                 <section className='card-criar'>
                     <CardCriar 
                         titulo="Criar Projeto"
-                        descricao={"Crie uma lista de tarefas para organizar seu dia-a-dia."}
+                        descricao={"Crie novos projetos e organize-os por categoria: pessoal, acadêmico ou profissional."}
                         img={ilustracaoProjeto}
                         open={tarefa}
                         setOpen={setProjeto} 
@@ -54,7 +54,7 @@ const Home = () => {
                     <ModalEnviarProjeto aberto={projeto} sair={handleCloseProjeto} />
                     <CardCriar
                         titulo="Criar Tarefa"
-                        descricao={"Crie tarefas com data de entrega e com nível de prioridade "}
+                        descricao={"Crie novas tarefas e organize-as por nível de prioridade. "}
                         img={ilustracaoTarefa}
                         open={projeto}
                         setOpen={setTarefa} 
@@ -62,13 +62,6 @@ const Home = () => {
                     <ModalEnviarTarefa aberto={tarefa} sair={handleCloseTarefa}/>
                 </section>
 
-                <section className='' aria-label="informações gerais">
-                    <Container />
-                </section>
-
-                <section className='body-desempenho'>
-                    <Desempenho />
-                </section>
             </main>
 
         </div>

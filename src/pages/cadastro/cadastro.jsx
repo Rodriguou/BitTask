@@ -42,10 +42,10 @@ const Cadastro = () =>{
 	const handleChangeSenha = ({ currentTarget: input }) =>{
 		console.log(input.value.length)
 		if (input.value.length >= 16){
-			setSenhaErro("Por favor utilize uma senha com no máximo 16 caracteres")
+			setSenhaErro("Por favor, utilize uma senha com no máximo 16 caracteres")
 		}
 		else if (input.value.length < 8){
-			setSenhaErro("Por favor utilize uma senha com no mínimo 8 caracteres")
+			setSenhaErro("Por favor, utilize uma senha com no mínimo 8 caracteres")
 			setData({ ...data, [input.id]: input.value });
 		}
 		else{

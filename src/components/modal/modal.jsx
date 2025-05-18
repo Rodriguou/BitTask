@@ -55,7 +55,7 @@ export const ModalEnviarProjeto = ({aberto, sair}) =>{
         setDados({...dados, [target.id] : target.value})
     }
 
-    const opcoesCategoria = ["pessoal", "academico", "profissional"]
+    const opcoesCategoria = ["pessoal", "acadêmico", "profissional"]
     
     return(
        
