@@ -22,8 +22,8 @@ const TelaIncial = () =>{
 
                 <main className="box-main">
                     <article >
-                        <h1 id="slogan"> <span>Organize, </span> <span>planeje, </span> <span>desenvolva com BitTask</span></h1>
-                        <p>O BitTask oferece recursos avançados para o seu planejamento diário, com estatisticas e gráficos para melhorar sua compreensão.</p>
+                        <h1 id="slogan"> <span>Organize, </span> <span>planeje </span> <span> e desenvolva </span></h1>
+                        <p>Oferecemos recursos avançados para o seu planejamento diário.</p>
                     </article>
 
                     <nav className="navegacao-inicial" aria-label="navegação-primária">
