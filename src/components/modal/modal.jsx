@@ -13,6 +13,7 @@ import { ProjetoGlobal } from "../../context/projetoContext"
 import { UserGlobal } from '../../context/userContext';
 import { ErroNotifi, SucessNotifi } from "../notificacao/notificacao"
 import { Navigate, useLocation, useNavigate } from "react-router-dom"
+import { TarefaGlobal } from "../../context/tarefaContext"
 
 
 export const ModalEnviarProjeto = ({aberto, sair}) =>{
@@ -103,21 +104,46 @@ export const ModalEnviarProjeto = ({aberto, sair}) =>{
 
 
 export const ModalEnviarTarefa = ({ aberto,sair}) =>{
-    function handleSubmit(event){
+    const {ObterProj} = React.useContext(ProjetoGlobal)
+    const {CriarTarefa} = React.useContext(TarefaGlobal)
+    const [listaProjetos, setListaProjetos] = React.useState()
+    React.useEffect(() =>{
+        async function requisicaoObterProjeto(){
+            console.log("requisição")
+            const req = await ObterProj()
+            setListaProjetos(req)
+            console.log(listaProjetos?.json[0].nome)
+        }
+
+       requisicaoObterProjeto()
+        console.log(listaProjetos)
+
+       
+    },[])
+
+    async function handleSubmit(event){
         event.preventDefault()
-        const req = axios.post("http://localhost:3001/api/user/tarefa")
+        const req = await CriarTarefa(selectProject,dados)
+        console.log(req)
+        
     }
+    const [selectProject, setSelectProject] = React.useState()
     // dados do formulário
     const [dados, setDados] = React.useState({
         nome : "",
+        status:false,
         descricao : "",
-        data : "",
-        projeto : "",
-        nivelPrioridade: ""
+        prioridade: ""
     })
 
     function onChange({target}){
         setDados({...dados, [target.id] : target.value})
+        console.log(dados)
+    }
+
+    function OnChangeProject({target}){
+        setSelectProject(target.value)
+        console.log(target.value)
     }
 
     const opcoesProjeto = ["senai", "escola", "pessoal"]
@@ -143,26 +169,30 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
                             placeholder="Digite uma breve descrição da tarefa"
                             f={onChange} 
                         />
-                        <section className="data-opcoes">
-                            <InputComp 
+                        {listaProjetos &&
+                             <section className="data-opcoes">
+                            {/* <InputComp 
                                 label="Data" 
                                 type="date"
                                 id="data"
                                 required
                                 f={onChange}
-                            />
-                            <SelectCompo options={opcoesProjeto} 
+                            /> */}
+                            <SelectCompo options={listaProjetos?.json} 
                                 label="Projeto"
                                 required
                                 id="projeto"
-                                f={onChange}
+                                f={OnChangeProject}
                             />
 
                         </section>
+                        
+                        }
+                       
                         <RadioCompo 
                             options={opcoesPrioridade} 
-                            nome="nivelPrioridade"
-                            id="nivelPrioridade"
+                            nome="prioridade"
+                            id="prioridade"
                             label="Nível de prioridade"
                             f={onChange}/>
                         <BotaoEnviar type="submit" />
