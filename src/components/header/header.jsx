@@ -1,7 +1,6 @@
 import React from 'react'
 import { BotaoCriar } from '../button/botao'
-import Pesquisar from '../pesquisar/pesquisar'
-import { ModalEnviarProjeto } from '../modal/modal'
+
 
 const Header = ({titulo,abrir,setAbrir,pesquisar,fButao}) => {
     const [open,setOpen] = React.useState(false)
@@ -13,7 +12,6 @@ const Header = ({titulo,abrir,setAbrir,pesquisar,fButao}) => {
       </section>
 
       <section className='secao-criar-pesquisar'>
-        <Pesquisar  />
         <BotaoCriar setValue={setAbrir} value={abrir}  />
       </section>
     </header>
