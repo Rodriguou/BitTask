@@ -8,7 +8,7 @@ import { ModalApresentarP } from '../modal/modalApresentar'
 const CardProjeto = ({nome, decricao, categoria, tarefa, id, img, fundo, corTexto, ...props}) => {
     const [aberto,setAberto] = React.useState(false)
     const handleClose = (() =>  setAberto(false))
-    const  hanldeModal = (()=> setAberto(true))
+    const  hanldeModal = (()=> setAberto((estadoAnterior) => !estadoAnterior))
 
 
     const dados = {
@@ -20,12 +20,12 @@ const CardProjeto = ({nome, decricao, categoria, tarefa, id, img, fundo, corText
     }
     console.log(dados.id)
   return (
-    <section className='box-card-projeto' aria-label="projeto" style={{backgroundColor : fundo}}{...props}>
-        <section className='inner-card-projeto'>
+      <section  className='box-card-projeto' aria-label="projeto" style={{backgroundColor : fundo}}{...props}>
+        <ModalApresentarP aberto={aberto} fechado={hanldeModal} dados={dados} />
+        <section onClick={hanldeModal} className='inner-card-projeto'>
             <section className='titulo-card-projeto'>
                 <h3 style={{color: corTexto}}>{nome}</h3>
                 <Seta f={hanldeModal} />
-                <ModalApresentarP aberto={aberto} fechado={handleClose} dados={dados} />
 
             </section>
             <p id='card-descricao-projeto'>{decricao}</p>
