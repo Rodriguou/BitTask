@@ -16,6 +16,7 @@ const Login = () => {
 	const contextUser = useContext(UserGlobal)
 	const navegar = useNavigate();
 	const [data, setData] = useState({ email: "", senha: "" });
+	
 	const [erro,setErro] = React.useState(false);
 	const logado = () => toast.success('Sucesso no login', {
         position: "top-right",

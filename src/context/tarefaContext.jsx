@@ -12,12 +12,21 @@ export const TarefaContext = ({children}) => {
   const token = window.localStorage.getItem('token');
 
 
-  async function CriarTarefa(url,dados){
-
+  async function CriarTarefa(projeto,dados){
+       console.log(token)
+      const req = await requisicao(`${base}/projetos/${projeto}/tarefas`,dados,"POST",  {Authorization : `Bearer ${token}`})
+      console.log( "req" + req)
+      return req
   }  
 
   async function ObterTudo(url,projeto){
+    const req = await requisicao(`${base}/projetos/`,null, "GET", {Authorization : `Bearer ${token}`})
+        return req
+  }
 
+  async function ObterTudoPorProjeto(projeto){
+    const req = await requisicao(`${base}/projetos/${projeto}/tarefas`,null, "GET", {Authorization : `Bearer ${token}`})
+        return req
   }
 
   async function  ObterEspecifico(url,id){
@@ -33,7 +42,7 @@ export const TarefaContext = ({children}) => {
   }
 
   return(
-    <TarefaGlobal.Provider value={{dados, loading, erro, CriarTarefa, ObterTudo, ObterEspecifico, AlterarTarefa, DeletarTarefa}}>
+    <TarefaGlobal.Provider value={{dados, loading, erro, CriarTarefa, ObterTudo,ObterTudoPorProjeto, ObterEspecifico, AlterarTarefa, DeletarTarefa}}>
         {children}
     </TarefaGlobal.Provider>
 

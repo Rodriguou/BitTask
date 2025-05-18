@@ -4,7 +4,9 @@
 @use "../mixins/botao.scss";
 @use "../mixins/tipografia.scss";
 @use "sass:math";
-
+.text-erro{
+    color: red;
+}
 section.box-input{
     display: flex;
     flex-direction: column;

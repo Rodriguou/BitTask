@@ -2,13 +2,13 @@ import React from 'react'
 import BarraNavegacao from '../../components/barraNavegacao'
 import Header from '../../components/header/header'
 import { ModalEnviarTarefa } from '../../components/modal/modal'
-import CardTarefas from '../../components/card/cardTarefas'
 import SelectCompo from '../../components/form/select'
 import CardTarefa from '../../components/card/cardTarefa'
 
 const Tarefa = () => {
   const [abrir, setAbrir] = React.useState(false)
   const handleClose = (() => setAbrir(false))
+  
   const [data,setData] = React.useState([
     {
       id : 1,
@@ -51,24 +51,6 @@ const Tarefa = () => {
 
         />
         <ModalEnviarTarefa aberto={abrir} sair={handleClose} />
-
-        <section className='geral-tarefa' >
-            <CardTarefas titulo="Prioridades"
-              dados={data}
-              fundo="#F5F8FF"
-              tamanhoTitulo="2rem" 
-              padding="1.5rem"
-              />
-            <CardTarefas 
-              titulo="Para hoje"
-              dados={data}
-              tamanhoTitulo="2rem"
-              fundo="#E7EDFC"
-              padding="1.5rem"
-              
-              />
-        </section>
-
 
         <section className='todas-tarefas' aria-labelledby='todas-tarefas'>
           <section className='titulo-select-tarefa'>

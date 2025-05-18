@@ -1,16 +1,20 @@
 import React from 'react'
 
 const SelectCompo = ({options,value,f,id,label, ...props}) => {
+  console.log(options)
   return (
     <section className='box-select-compo'>
         <label htmlFor={id}>{label}</label>
         <select className='select-compo' value={value} onChange={f} id={id} {...props}>
             <option value="" disabled>Escolha uma opção</option>
-        {options.map((item) =>{
+        {options?.map((item) =>{
+          console.log(item)
             return(
-                <option id={item} key={item} value={item}>{item}</option>
+                <option id={item?._id} key={item} value={item?._id}>{item?.nome}</option>
             )
         })}
+       
+       
         </select>
 
     </section>

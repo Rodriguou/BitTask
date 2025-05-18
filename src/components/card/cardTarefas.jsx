@@ -23,13 +23,14 @@ const CardTarefas = ({dados,setDados,titulo,tamanhoTitulo,padding ,fundo}) => {
          <h3 style={{fontSize: tamanhoTitulo}}>{titulo}</h3>
                   <article className='body-check' style={{backgroundColor : fundo, padding : padding}}>
                       {dados.map((t) =>{
+                        console.log(t)
                           return(
                               <Check
-                                  key={t.id}
-                                  id={t.id} 
-                                  checked={t.check} 
-                                  value={t.id} 
-                                  label={t.desc} 
+                                  key={t._id}
+                                  id={t._id} 
+                                  checked={t.status} 
+                                  value={t._id} 
+                                  label={t.nome} 
                                   f={onChange} 
                                   cor={'#FFFFFF '}
                                   seta={true}
