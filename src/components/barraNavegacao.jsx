@@ -23,19 +23,19 @@ const BarraNavegacao = ({cor,ariaLabel,fundo,itemSelec}) => {
 
         </li>
 
-        <li>
-          <Link className='item-nav' to={"/tarefa"} id={tarefa ? 'selecionado' : ''}>
-            <img src={botaoProjeto} alt='botao para tarefa'/>
-            <p>Tarefas</p>
-          </Link>
-
-        </li>
         
         <li>
           <Link className='item-nav' to={"/projeto"} id={projeto ? 'selecionado' : ''}>
             <img src={botaoTarefa} alt='botao para home'/>
             <p>Projetos</p>
           </Link>
+        </li>
+        <li>
+          <Link className='item-nav' to={"/tarefa"} id={tarefa ? 'selecionado' : ''}>
+            <img src={botaoProjeto} alt='botao para tarefa'/>
+            <p>Tarefas</p>
+          </Link>
+
         </li>
 
       </ul>
