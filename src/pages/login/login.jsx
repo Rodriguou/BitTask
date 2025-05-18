@@ -93,7 +93,7 @@ const Login = () => {
 					</aside>
 					{contextUser.erro && <p>{contextUser.erro}</p>}
 					{ contextUser.loading && <BotaoEnviar texto="carregando" />}
-					<BotaoEnviar type='submit' texto="ENTRAR" />
+					<BotaoEnviar type='submit' texto="ENTRAR" disabled={data.email == "" || data.senha == "" ? true : false} />
 				</form>
 			</section>
 

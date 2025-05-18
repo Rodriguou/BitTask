@@ -38,3 +38,17 @@
     }
     
  }
+
+
+ .botao-enviar-hover{
+    @include botao.botao("medio-disabled" ,black,paleta_cores.$azul-claro,3px solid transparent);
+    transition: 0.3s;
+    &:disabled{
+        background-color: rgb(8, 35, 54);
+        color: rgb(144, 144, 144);
+    }
+    &:hover{
+        color: rgb(127, 127, 127) !important; 
+    }
+    
+ }

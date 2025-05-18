@@ -7,6 +7,7 @@
    
     @if $tamanho == "grande"{
         display: flex;
+        cursor:pointer;
         background-color: $fundo;
         color: $cor;
         place-self: center;
@@ -27,6 +28,7 @@
     @else if $tamanho == "medio"{
         display: flex;
         background-color: $fundo;
+        cursor:pointer;
         color: $cor;
         font-size: to_rem.toRem(20px);
         border-radius: to_rem.toRem(10px);
@@ -42,10 +44,25 @@
             box-shadow: 0px 4px 15px 0px rgba(126, 139, 255, 0.576);
         }
     }
+
+    @else if $tamanho == "medio-disabled"{
+        display: flex;
+        background-color: $fundo;
+        color: $cor;
+        font-size: to_rem.toRem(20px);
+        border-radius: to_rem.toRem(10px);
+        border: $borda;
+        padding: to_rem.toRem(22px) to_rem.toRem(46px) to_rem.toRem(23px) to_rem.toRem(47px);
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        
+    }
     
     @else if $tamanho == "pequeno"{
         display: flex;
         border: $borda;
+        cursor:pointer;
         color: $cor;
         font-size: to_rem.toRem(18px);
         background-color: $fundo;
