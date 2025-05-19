@@ -23,7 +23,7 @@ const TelaIncial = () =>{
                 <main className="box-main">
                     <article >
                         <h1 id="slogan"> <span>Organize, </span> <span>planeje </span> <span> e desenvolva </span></h1>
-                        <p>Oferecemos recursos avançados para o seu planejamento diário.</p>
+                        <p>Oferecemos recursos para o seu planejamento diário.</p>
                     </article>
 
                     <nav className="navegacao-inicial" aria-label="navegação-primária">
@@ -36,10 +36,7 @@ const TelaIncial = () =>{
                     </nav>
 
                     <aside className="navegacao-aux" aria-label="navegação secundária">
-                        <nav className="inner-nav-aux">
-                                <Link to={"/"}>Sobre</Link>
-                                <Link to={"/"}>Dicas</Link>
-                        </nav>
+                       
                     </aside>
 
                 </main>
