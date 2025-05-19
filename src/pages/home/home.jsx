@@ -44,6 +44,7 @@ const Home = () => {
 
             <main id='box-main-home'>
                 <section className='card-criar'>
+                    <div>
                     <CardCriar 
                         titulo="Criar Projeto"
                         descricao={"Crie novos projetos e organize-os por categoria: pessoal, acadêmico ou profissional."}
@@ -52,6 +53,10 @@ const Home = () => {
                         setOpen={setProjeto} 
                         />
                     <ModalEnviarProjeto aberto={projeto} sair={handleCloseProjeto} />
+
+                    </div>
+
+                    <div>
                     <CardCriar
                         titulo="Criar Tarefa"
                         descricao={"Crie novas tarefas e organize-as por nível de prioridade. "}
@@ -60,6 +65,8 @@ const Home = () => {
                         setOpen={setTarefa} 
                         />
                     <ModalEnviarTarefa aberto={tarefa} sair={handleCloseTarefa}/>
+
+                    </div>
                 </section>
 
             </main>

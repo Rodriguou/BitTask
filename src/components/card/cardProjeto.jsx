@@ -31,7 +31,7 @@ const CardProjeto = ({nome, decricao, categoria, tarefa, id, img, fundo, corText
             <p id='card-descricao-projeto'>{decricao}</p>
             <section className='card-categoria-tarefa'>
                <Tag nome={categoria} cor='#3D77FB' />
-               <Tag nome={tarefa} cor='#CFCFCF' />
+             
             </section>
 
         </section>

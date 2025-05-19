@@ -6,6 +6,11 @@
 
 
 
+.box-card-projeto:hover{
+
+        background-color: #424242 !important;
+    
+}
 .box-card-projeto{
     border-radius: 0.9rem;
     .inner-card-projeto{
@@ -19,6 +24,7 @@
             gap: 0.5rem;
         }
     }
+    
     .titulo-card-projeto{
         display: grid;
         grid-template-columns: 1fr 5%;

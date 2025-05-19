@@ -55,6 +55,7 @@ const Projeto = () => {
                 decricao={item.descricao}
                 categoria={item.categoria}
                 fundo="#2F2F2F"
+                hover="#424242"
                 corTexto="#FFFFFF"
                 id={item._id}
               />

@@ -11,6 +11,7 @@ nav.box-barra-nav{
     display: block;
     height: 100%;
     z-index: 99;
+    height: 100vh;
    
 
     
@@ -20,9 +21,10 @@ nav.box-barra-nav{
         position: absolute;
         display: flex;
         flex-direction: column;
+    
         padding: to_rem.toRem(25px) to_rem.toRem(10px) to_rem.toRem(15px) to_rem.toRem(10px);
-        gap: 1.8rem;
-        height: 100%;
+       
+        height: 100vh;
         overflow: hidden;
         width: 3.3rem;
         transition: 0.4s;
@@ -31,8 +33,30 @@ nav.box-barra-nav{
             width: 9rem;
             
         }
+        .paginas{
+            display: flex;
+            height: 50%;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .logout{
+            display: flex;
+            
+           margin-top: 320px;
+            height: 50%;
+            &:hover{
+            width: 9rem;
+            
+        }
+        
+        }
+        .logout button{
+            max-height: 55px;
+            background-color: transparent;
+            border: none
+        }
 
-        a.item-nav{
+        .item-nav{
             @include reset.reset();
             display: grid;
             grid-template-columns: 1fr 1fr;
