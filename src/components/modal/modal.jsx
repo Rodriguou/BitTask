@@ -157,16 +157,22 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
     const [descricaoErro,setDescricaoErro] = React.useState(false)
     const [submitSucces, setSubmitSucces] = React.useState(false)
     const [submitError, setSubmitError] = React.useState(false)
+    
     React.useEffect(() =>{
         async function requisicaoObterProjeto(){
-            console.log("requisição")
             const req = await ObterProj()
             setListaProjetos(req)
-            console.log(listaProjetos?.json[0].nome)
+            console.log(req)
+            if (req?.json?.length == 1){
+                console.log(req?.json)
+                setSelectProject(req.json[0]._id)
+                console.log(selectProject)
+            }
+          
         }
 
        requisicaoObterProjeto()
-        console.log(listaProjetos)
+      
 
        
     },[])
@@ -185,7 +191,10 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
         }
         
     }
-    const [selectProject, setSelectProject] = React.useState()
+    const [selectProject, setSelectProject] = React.useState(() =>{
+       
+    })
+    
     // dados do formulário
     const [dados, setDados] = React.useState({
         nome : "",
@@ -195,7 +204,7 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
     })
 
     function onChangeNome({target}){
-        console.log(target.value.length)
+      
        	if (target.value.length >= 30){
 			setNomeErro("Respeite o limite máximo de 30 caracteres")
 		}
@@ -222,12 +231,12 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
 
     function onChange({target}){
         setDados({...dados, [target.id] : target.value})
-        console.log(dados)
+        
     }
 
     function OnChangeProject({target}){
+       
         setSelectProject(target.value)
-        console.log(target.value)
     }
 
     const opcoesPrioridade = ["baixa", "média", "alta"]
@@ -273,6 +282,7 @@ export const ModalEnviarTarefa = ({ aberto,sair}) =>{
                                     label="Projeto"
                                     required
                                     id="projeto"
+                                    value={selectProject}
                                     f={OnChangeProject}
                                 />
 
