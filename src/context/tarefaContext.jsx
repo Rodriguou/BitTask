@@ -20,7 +20,7 @@ export const TarefaContext = ({children}) => {
   }  
 
   async function ObterTudo(url,projeto){
-    const req = await requisicao(`${base}/projetos/`,null, "GET", {Authorization : `Bearer ${token}`})
+    const req = await requisicao(`${base}/projetos/tarefas`,null, "GET", {Authorization : `Bearer ${token}`})
         return req
   }
 
@@ -33,12 +33,15 @@ export const TarefaContext = ({children}) => {
 
   }
 
-  async function AlterarTarefa(url,id){
-
-  }  
-
-  async function DeletarTarefa(url,id){
-
+  async function AlterarTarefa(projetoId,tarefaId, dados){
+    const req = await requisicao(`${base}/projetos/${projetoId}/tarefas/${tarefaId}`,dados, "PUT", {Authorization : `Bearer ${token}`})
+        return req
+      }  
+      
+    async function DeletarTarefa(projetoId,tarefaId,){
+      const req = await requisicao(`${base}/projetos/${projetoId}/tarefas/${tarefaId}`,null, "DELETE", {Authorization : `Bearer ${token}`})
+        return req
+    
   }
 
   return(
