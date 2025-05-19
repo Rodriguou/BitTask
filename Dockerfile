@@ -1,35 +1,32 @@
-# Usa a imagem Node como base para construção
-FROM node:18.17.0 AS builder
+# Estágio de construção
+FROM node:18-alpine AS builder
 
-# Cria a pasta /frontend dentro do contêiner
+# Define a pasta onde os comandos seguintes serão executados
 WORKDIR /frontend
 
-# Copia apenas os arquivos necessários para instalar as dependências
-COPY package.json package-lock.json /frontend/
+# Copia apenas os arquivos necessários para instalar dependências
+COPY package*.json ./
 
-# Instala as dependências
-RUN npm install
+# Instala as dependências antes de copiar o resto dos arquivos
+RUN npm install --frozen-lockfile
 
-# Copia o restante dos arquivos para o contêiner
-COPY . /frontend/
+# Copia o restante do código
+COPY . .
 
-# Gera a versão otimizada para produção
-RUN npx vite build
+# Executa o comando de construção do projeto
+RUN npm run build
 
-# Usa uma imagem leve para produção
-FROM node:18.17.0-alpine
+# Estágio de produção
+FROM nginx:1.26-alpine
 
-# Cria a pasta /frontend dentro do contêiner
-WORKDIR /frontend
+# Remove o arquivo de configuração padrão do Nginx
+RUN rm /etc/nginx/conf.d/default.conf
 
-# Copia apenas os arquivos necessários para a produção
-COPY --from=builder /frontend/dist /frontend/dist
+# Copia o arquivo de configuração nginx.conf para a pasta de configuração do Nginx
+COPY nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
 
-# Instala um servidor HTTP leve
-RUN npm install -g serve
+# Copia os arquivos compilados da etapa de construção para a pasta html do Nginx
+COPY --from=builder /frontend/dist /usr/share/nginx/html
 
-# Indica que a aplicação dentro do contêiner é executada na porta 5173.
-EXPOSE 5173
-
-# Comando para iniciar o servidor HTTP e servir os arquivos estáticos em produção
-CMD ["serve", "-s", "dist", "-l", "5173"]
+# Expõe a porta 80 para acessar o servidor Nginx
+EXPOSE 80
