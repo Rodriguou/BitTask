@@ -58,8 +58,13 @@ export const UserProvider = ({children}) =>{
 		}
     }
 
+	async function userLogout(token){
+		const req = axios.requisicao(`${base}/login/logout`, null, "POST", {Authorization : `Bearer ${token}`})
+		return req
+	} 
+
     return(
-        <UserGlobal.Provider value={{data,login,loading,nome,user,userLogin,token,erro}}>
+        <UserGlobal.Provider value={{data,login,loading,nome,user,userLogin,userLogout,token,erro}}>
             {children}
         </UserGlobal.Provider>
         
