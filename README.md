@@ -24,8 +24,8 @@
 
 
 # DevTeam 👨‍💻
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131712164?v=4" width=115><br><sub>Ryan</sub>](https://github.com/ryanNS3) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131712437?v=4" width=115><br><sub>Rodrigo</sub>](https://github.com/Rodriguou) |
-| :---: | :---: |
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131712164?v=4" width=115><br><sub>Ryan</sub>](https://github.com/ryanNS3) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131711547?v=4" width=115><br><sub>Weverton</sub>](https://github.com/WevertonSPWOS) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131712437?v=4" width=115><br><sub>Rodrigo</sub>](https://github.com/Rodriguou) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/131711415?s=400&u=788cb9091dd633c9e37f634268fe05c2a143e905&v=4" width=115><br><sub>Kauê</sub>](https://github.com/kauetrigolo) |
+| :---: | :---: | :---: |  :---: |
 
 
 
